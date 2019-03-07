@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="graphics3_1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\includes\;CMake Files\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GL">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libGL.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 GL"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GL/fast">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libGL.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 GL/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shape">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libShape.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 Shape"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shape/fast">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libShape.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 Shape/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLAD">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libGLAD.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 GLAD"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLAD/fast">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libGLAD.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 GLAD/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shaders">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libShaders.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 Shaders"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shaders/fast">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libShaders.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 Shaders/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLFW">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libGLFW.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 GLFW"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLFW/fast">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/libGLFW.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/kory/CLionProjects/graphics3.1/includes"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 GLFW/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graphics3_1">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/graphics3_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 graphics3_1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graphics3_1/fast">
+				<Option output="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/graphics3_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 graphics3_1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/GL/glew.h">
+			<Option target="GL"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/GL/glxew.h">
+			<Option target="GL"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/GL/wglew.h">
+			<Option target="GL"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/GLFW/glfw3.h">
+			<Option target="GLFW"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/GLFW/glfw3native.h">
+			<Option target="GLFW"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/glad/glad.h">
+			<Option target="GLAD"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/shaders/shader.h">
+			<Option target="Shaders"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/shape/Shape.cpp">
+			<Option target="Shape"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/shape/Shape.h">
+			<Option target="Shape"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/src/main.cpp">
+			<Option target="graphics3_1"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/includes/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\includes\"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.1/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

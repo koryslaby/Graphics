@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/graphics3_1.dir/src/main.cpp.o  -o graphics3_1 libGLFW.a libGLAD.a libGL.a libShape.a libShaders.a libGLAD.a 

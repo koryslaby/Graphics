@@ -1,0 +1,2 @@
+/usr/bin/ar qc libGLad.a  
+/usr/bin/ranlib libGLad.a

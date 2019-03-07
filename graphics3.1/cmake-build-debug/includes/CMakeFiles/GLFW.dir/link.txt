@@ -1,0 +1,2 @@
+/usr/bin/ar qc libGLFW.a  
+/usr/bin/ranlib libGLFW.a

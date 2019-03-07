@@ -1,0 +1,2 @@
+/usr/bin/ar qc libShaders.a  
+/usr/bin/ranlib libShaders.a

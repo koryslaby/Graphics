@@ -1,0 +1,12 @@
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/CMakeFiles/rebuild_cache.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/CMakeFiles/GL.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/CMakeFiles/Shape.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/CMakeFiles/GLAD.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/CMakeFiles/Shaders.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/CMakeFiles/GLFW.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/includes/CMakeFiles/edit_cache.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/CMakeFiles/graphics3_1.dir
+/home/kory/CLionProjects/graphics3.1/cmake-build-debug/src/CMakeFiles/edit_cache.dir

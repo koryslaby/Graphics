@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/graphics3_1.dir/main.cpp.o  -o graphics3_1 -lincludes 
