@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -g -Wall   CMakeFiles/graphics3_2.dir/src/main.cpp.o  -o graphics3_2  -L/home/kory/CLionProjects/graphics3.2/lib -Wl,-rpath,/home/kory/CLionProjects/graphics3.2/lib /usr/local/lib/libglfw3.a -lX11 -lXrandr -lXinerama -lXi -lXxf86vm -lXcursor -lGL -ldl -lpthread /usr/lib/x86_64-linux-gnu/libassimp.so libGLAD.a libShape.a  -ldl

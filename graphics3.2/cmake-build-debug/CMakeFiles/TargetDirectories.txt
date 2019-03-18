@@ -1,0 +1,5 @@
+/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles/graphics3_2.dir
+/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles/GLAD.dir
+/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles/Shape.dir

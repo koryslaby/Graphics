@@ -1,0 +1,2 @@
+/usr/bin/ar qc libShape.a  CMakeFiles/Shape.dir/src/Shape.cpp.o
+/usr/bin/ranlib libShape.a
