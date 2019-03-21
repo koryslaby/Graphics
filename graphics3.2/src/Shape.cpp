@@ -23,43 +23,8 @@
 
 #include "shader.h"
 #include "Shape.h"
- 
-float cubeVertices[] = {
-        -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-        0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-        -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
 
-        -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-        0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
-
-        0.5f,  0.5f,  0.5f,  0.5, 0.0, 0.5f,
-        0.5f,  0.5f, -0.5f,  0.5, 0.0, 0.5f,
-        0.5f, -0.5f, -0.5f,  0.5, 0.0, 0.5f,
-        0.5f, -0.5f, -0.5f,  0.5, 0.0, 0.5f,
-        0.5f, -0.5f,  0.5f,  0.5, 0.0, 0.5f,
-        0.5f,  0.5f,  0.5f,  0.5, 0.0, 0.5f,
-
-        -0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
-        0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
-        0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
-        0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
-        -0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
-        -0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
-
+float planeVertices[36] = {
         -0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
         0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
         0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
@@ -68,16 +33,27 @@ float cubeVertices[] = {
         -0.5f,  0.5f, -0.5f, 0.0, 0.5, 0.5f
 };
 
-void Shape::setCurrentShape (int shape) {
-    currentShape = shape;
+Shape::Shape() {
 }
 
-void Shape::bufferCreate() {
+Shape::Shape(std::string shape) {
+    this ->setCurrentShape(shape);
+}
+
+void Shape::setCurrentShape(std::string shape) {
+    this -> currentShape = shape;
+}
+
+void Shape::bufferCreate(float currentVertex[], int size){
+    float virtices[size];
+    for(int i = 0; i < size; i++){
+        virtices[i] = currentVertex[i];
+    }
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof((virtices)), virtices, GL_STATIC_DRAW);
     //teling opengl how to interpret the vertex data.
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);

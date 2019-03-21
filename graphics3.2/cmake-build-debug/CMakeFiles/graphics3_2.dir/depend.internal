@@ -206,6 +206,7 @@ CMakeFiles/graphics3_2.dir/src/main.cpp.o
  ../includes/glm/vec3.hpp
  ../includes/glm/vec4.hpp
  ../includes/glm/vector_relational.hpp
+ /home/kory/CLionProjects/graphics3.2/src/Cube.h
  /home/kory/CLionProjects/graphics3.2/src/Shape.h
  /home/kory/CLionProjects/graphics3.2/src/main.cpp
  /home/kory/CLionProjects/graphics3.2/src/shader.h

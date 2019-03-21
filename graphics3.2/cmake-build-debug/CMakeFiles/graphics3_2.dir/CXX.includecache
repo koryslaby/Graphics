@@ -1452,6 +1452,10 @@ detail/setup.hpp
 detail/func_vector_relational.inl
 ../includes/glm/detail/func_vector_relational.inl
 
+/home/kory/CLionProjects/graphics3.2/src/Cube.h
+Shape.h
+/home/kory/CLionProjects/graphics3.2/src/Shape.h
+
 /home/kory/CLionProjects/graphics3.2/src/Shape.h
 
 /home/kory/CLionProjects/graphics3.2/src/main.cpp
@@ -1487,6 +1491,8 @@ shader.h
 /home/kory/CLionProjects/graphics3.2/src/shader.h
 Shape.h
 /home/kory/CLionProjects/graphics3.2/src/Shape.h
+Cube.h
+/home/kory/CLionProjects/graphics3.2/src/Cube.h
 
 /home/kory/CLionProjects/graphics3.2/src/shader.h
 glad/glad.h

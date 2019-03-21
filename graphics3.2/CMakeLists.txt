@@ -34,7 +34,7 @@ endif (WIN32)
 #configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 #include_directories(${CMAKE_BINARY_DIR}/configuration)
 
-add_library(GLAD "src/glad.c")
+add_library(GLAD "src/glad.c" src/Cube.cpp src/Cube.h)
 add_library(Shape "src/Shape.cpp")
 set(LIBS ${LIBS} GLAD Shape)
 

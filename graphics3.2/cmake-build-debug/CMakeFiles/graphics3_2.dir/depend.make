@@ -205,6 +205,7 @@ CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../includes/glm/vec2.hpp
 CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../includes/glm/vec3.hpp
 CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../includes/glm/vec4.hpp
 CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../includes/glm/vector_relational.hpp
+CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../src/Cube.h
 CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../src/Shape.h
 CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics3_2.dir/src/main.cpp.o: ../src/shader.h

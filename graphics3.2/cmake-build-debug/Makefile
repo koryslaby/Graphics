@@ -149,6 +149,33 @@ Shape/fast:
 	$(MAKE) -f CMakeFiles/Shape.dir/build.make CMakeFiles/Shape.dir/build
 .PHONY : Shape/fast
 
+src/Cube.o: src/Cube.cpp.o
+
+.PHONY : src/Cube.o
+
+# target to build an object file
+src/Cube.cpp.o:
+	$(MAKE) -f CMakeFiles/GLAD.dir/build.make CMakeFiles/GLAD.dir/src/Cube.cpp.o
+.PHONY : src/Cube.cpp.o
+
+src/Cube.i: src/Cube.cpp.i
+
+.PHONY : src/Cube.i
+
+# target to preprocess a source file
+src/Cube.cpp.i:
+	$(MAKE) -f CMakeFiles/GLAD.dir/build.make CMakeFiles/GLAD.dir/src/Cube.cpp.i
+.PHONY : src/Cube.cpp.i
+
+src/Cube.s: src/Cube.cpp.s
+
+.PHONY : src/Cube.s
+
+# target to generate assembly for a file
+src/Cube.cpp.s:
+	$(MAKE) -f CMakeFiles/GLAD.dir/build.make CMakeFiles/GLAD.dir/src/Cube.cpp.s
+.PHONY : src/Cube.cpp.s
+
 src/Shape.o: src/Shape.cpp.o
 
 .PHONY : src/Shape.o
@@ -241,6 +268,9 @@ help:
 	@echo "... GLAD"
 	@echo "... rebuild_cache"
 	@echo "... Shape"
+	@echo "... src/Cube.o"
+	@echo "... src/Cube.i"
+	@echo "... src/Cube.s"
 	@echo "... src/Shape.o"
 	@echo "... src/Shape.i"
 	@echo "... src/Shape.s"

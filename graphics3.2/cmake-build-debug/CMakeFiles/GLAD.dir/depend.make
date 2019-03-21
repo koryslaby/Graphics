@@ -3,3 +3,7 @@
 
 CMakeFiles/GLAD.dir/src/glad.c.o: ../src/glad.c
 
+CMakeFiles/GLAD.dir/src/Cube.cpp.o: ../src/Cube.cpp
+CMakeFiles/GLAD.dir/src/Cube.cpp.o: ../src/Cube.h
+CMakeFiles/GLAD.dir/src/Cube.cpp.o: ../src/Shape.h
+

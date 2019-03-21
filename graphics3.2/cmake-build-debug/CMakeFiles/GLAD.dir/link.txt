@@ -1,2 +1,2 @@
-/usr/bin/ar qc libGLAD.a  CMakeFiles/GLAD.dir/src/glad.c.o
+/usr/bin/ar qc libGLAD.a  CMakeFiles/GLAD.dir/src/glad.c.o CMakeFiles/GLAD.dir/src/Cube.cpp.o
 /usr/bin/ranlib libGLAD.a

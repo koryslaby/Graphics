@@ -21,6 +21,7 @@
 
 #include "shader.h"
 #include "Shape.h"
+#include "Cube.h"
  
 using namespace std;
 
@@ -53,8 +54,8 @@ int main(int argc, char const *argv[])
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    Shape cube;
-    cube.setCurrentShape(0);
+    Cube cube("cube");
+
 
     glm::vec3 cubPositions[] = {
             glm::vec3(0.0f, 0.0f, -20.0f),
@@ -97,7 +98,7 @@ int main(int argc, char const *argv[])
 
     Shader myShader("shader.vs", "shader.fs");
 
-    cube.bufferCreate();
+    cube.cubeBufferCreate();
 
 
 

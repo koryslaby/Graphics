@@ -6,15 +6,20 @@
 #define CLION_SHAPE_H
 
 
+
 class Shape {
-    int currentShape;
+protected:
     unsigned int VBO, VAO;
+    std::string currentShape;
+
 public:
-    void setCurrentShape(int currentShape);
-    void bufferCreate();
+    Shape();
+    Shape(std::string shape);
+    void setCurrentShape(std::string shape);
+    void bufferCreate(float *array, int size);
     void bindBuffer();
 
-private:
+
 };
 
 

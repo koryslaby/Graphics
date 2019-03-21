@@ -182,6 +182,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/kory/CLionProjects/graphics3.2/src/Cube.cpp">
+			<Option target="GLAD"/>
+		</Unit>
+		<Unit filename="/home/kory/CLionProjects/graphics3.2/src/Cube.h">
+			<Option target="GLAD"/>
+		</Unit>
 		<Unit filename="/home/kory/CLionProjects/graphics3.2/src/Shape.cpp">
 			<Option target="Shape"/>
 		</Unit>
