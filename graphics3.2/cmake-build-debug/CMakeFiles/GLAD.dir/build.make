@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kory/CLionProjects/graphics3.2
+CMAKE_SOURCE_DIR = /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kory/CLionProjects/graphics3.2/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GLAD.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/GLAD.dir/flags.make
 
 CMakeFiles/GLAD.dir/src/glad.c.o: CMakeFiles/GLAD.dir/flags.make
 CMakeFiles/GLAD.dir/src/glad.c.o: ../src/glad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GLAD.dir/src/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/GLAD.dir/src/glad.c.o   -c /home/kory/CLionProjects/graphics3.2/src/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/GLAD.dir/src/glad.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/GLAD.dir/src/glad.c.o   -c /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/glad.c
 
 CMakeFiles/GLAD.dir/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GLAD.dir/src/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kory/CLionProjects/graphics3.2/src/glad.c > CMakeFiles/GLAD.dir/src/glad.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/glad.c > CMakeFiles/GLAD.dir/src/glad.c.i
 
 CMakeFiles/GLAD.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GLAD.dir/src/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kory/CLionProjects/graphics3.2/src/glad.c -o CMakeFiles/GLAD.dir/src/glad.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/glad.c -o CMakeFiles/GLAD.dir/src/glad.c.s
 
 CMakeFiles/GLAD.dir/src/Cube.cpp.o: CMakeFiles/GLAD.dir/flags.make
 CMakeFiles/GLAD.dir/src/Cube.cpp.o: ../src/Cube.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GLAD.dir/src/Cube.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GLAD.dir/src/Cube.cpp.o -c /home/kory/CLionProjects/graphics3.2/src/Cube.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GLAD.dir/src/Cube.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GLAD.dir/src/Cube.cpp.o -c /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Cube.cpp
 
 CMakeFiles/GLAD.dir/src/Cube.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GLAD.dir/src/Cube.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kory/CLionProjects/graphics3.2/src/Cube.cpp > CMakeFiles/GLAD.dir/src/Cube.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Cube.cpp > CMakeFiles/GLAD.dir/src/Cube.cpp.i
 
 CMakeFiles/GLAD.dir/src/Cube.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GLAD.dir/src/Cube.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kory/CLionProjects/graphics3.2/src/Cube.cpp -o CMakeFiles/GLAD.dir/src/Cube.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Cube.cpp -o CMakeFiles/GLAD.dir/src/Cube.cpp.s
 
 # Object files for target GLAD
 GLAD_OBJECTS = \
@@ -95,7 +95,7 @@ libGLAD.a: CMakeFiles/GLAD.dir/src/glad.c.o
 libGLAD.a: CMakeFiles/GLAD.dir/src/Cube.cpp.o
 libGLAD.a: CMakeFiles/GLAD.dir/build.make
 libGLAD.a: CMakeFiles/GLAD.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libGLAD.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libGLAD.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/GLAD.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GLAD.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/GLAD.dir/clean:
 .PHONY : CMakeFiles/GLAD.dir/clean
 
 CMakeFiles/GLAD.dir/depend:
-	cd /home/kory/CLionProjects/graphics3.2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kory/CLionProjects/graphics3.2 /home/kory/CLionProjects/graphics3.2 /home/kory/CLionProjects/graphics3.2/cmake-build-debug /home/kory/CLionProjects/graphics3.2/cmake-build-debug /home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles/GLAD.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug/CMakeFiles/GLAD.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GLAD.dir/depend
 

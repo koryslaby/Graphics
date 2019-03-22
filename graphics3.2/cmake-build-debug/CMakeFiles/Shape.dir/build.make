@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kory/CLionProjects/graphics3.2
+CMAKE_SOURCE_DIR = /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kory/CLionProjects/graphics3.2/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Shape.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Shape.dir/flags.make
 
 CMakeFiles/Shape.dir/src/Shape.cpp.o: CMakeFiles/Shape.dir/flags.make
 CMakeFiles/Shape.dir/src/Shape.cpp.o: ../src/Shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Shape.dir/src/Shape.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Shape.dir/src/Shape.cpp.o -c /home/kory/CLionProjects/graphics3.2/src/Shape.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Shape.dir/src/Shape.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Shape.dir/src/Shape.cpp.o -c /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.cpp
 
 CMakeFiles/Shape.dir/src/Shape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Shape.dir/src/Shape.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kory/CLionProjects/graphics3.2/src/Shape.cpp > CMakeFiles/Shape.dir/src/Shape.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.cpp > CMakeFiles/Shape.dir/src/Shape.cpp.i
 
 CMakeFiles/Shape.dir/src/Shape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shape.dir/src/Shape.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kory/CLionProjects/graphics3.2/src/Shape.cpp -o CMakeFiles/Shape.dir/src/Shape.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.cpp -o CMakeFiles/Shape.dir/src/Shape.cpp.s
 
 # Object files for target Shape
 Shape_OBJECTS = \
@@ -80,7 +80,7 @@ Shape_EXTERNAL_OBJECTS =
 libShape.a: CMakeFiles/Shape.dir/src/Shape.cpp.o
 libShape.a: CMakeFiles/Shape.dir/build.make
 libShape.a: CMakeFiles/Shape.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libShape.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libShape.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/Shape.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Shape.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/Shape.dir/clean:
 .PHONY : CMakeFiles/Shape.dir/clean
 
 CMakeFiles/Shape.dir/depend:
-	cd /home/kory/CLionProjects/graphics3.2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kory/CLionProjects/graphics3.2 /home/kory/CLionProjects/graphics3.2 /home/kory/CLionProjects/graphics3.2/cmake-build-debug /home/kory/CLionProjects/graphics3.2/cmake-build-debug /home/kory/CLionProjects/graphics3.2/cmake-build-debug/CMakeFiles/Shape.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug/CMakeFiles/Shape.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Shape.dir/depend
 

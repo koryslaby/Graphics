@@ -1,10 +1,10 @@
-/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/kory/CLionProjects/graphics3.2
--- GLM_INCLUDE_DIR = /usr/include
--- GLM included at /usr/include
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2
+-- GLM_INCLUDE_DIR = /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/includes
+-- GLM included at /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/includes
 -- GLFW3 included at /usr/local/include
--- Found ASSIMP: /usr/lib/x86_64-linux-gnu/libassimp.so
--- ASSIMP included at /usr/include
--- OpenGL included at 
+This is in modules /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2
+-- Found ASSIMP: /usr/local/lib/libassimp.dylib
+-- Found ASSIMP in /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/includes
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/kory/CLionProjects/graphics3.2/cmake-build-debug
+-- Build files have been written to: /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/cmake-build-debug

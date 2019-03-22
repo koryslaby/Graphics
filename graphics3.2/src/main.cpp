@@ -54,6 +54,10 @@ int main(int argc, char const *argv[])
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
+#endif
+
     Cube cube("cube");
 
 
@@ -74,7 +78,9 @@ int main(int argc, char const *argv[])
 
     //creating a window and giving it a name
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "My Screen", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH-1, SCR_HEIGHT, "My Screen", nullptr, nullptr);
+    glfwPollEvents();
+    glfwSetWindowSize(window, SCR_WIDTH, SCR_HEIGHT);
     if ( window == NULL)
     {
         cout << "failed to create GLFWwindow" << endl;
