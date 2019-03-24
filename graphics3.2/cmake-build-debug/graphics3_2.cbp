@@ -182,6 +182,12 @@
 		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Cube.h">
 			<Option target="GLAD"/>
 		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Plain.cpp">
+			<Option target="Shape"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Plain.h">
+			<Option target="Shape"/>
+		</Unit>
 		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.cpp">
 			<Option target="Shape"/>
 		</Unit>

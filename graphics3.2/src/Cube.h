@@ -13,6 +13,7 @@ public:
     Cube(): Shape(){};
     Cube(std::string shape): Shape(shape){};
     void cubeBufferCreate();
+    void cubeBindBuffer();
 
 };
 

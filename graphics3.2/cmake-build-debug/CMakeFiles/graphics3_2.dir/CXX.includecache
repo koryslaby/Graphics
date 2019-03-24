@@ -1456,6 +1456,12 @@ detail/func_vector_relational.inl
 Shape.h
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.h
 
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Plain.h
+iostream
+-
+Shape.h
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.h
+
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.h
 
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/main.cpp
@@ -1493,6 +1499,8 @@ Shape.h
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Shape.h
 Cube.h
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Cube.h
+Plain.h
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/Plain.h
 
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics3.2/src/shader.h
 glad/glad.h

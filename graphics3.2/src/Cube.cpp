@@ -51,5 +51,10 @@ float cubeVertices[216] = {
 };
 
 void Cube::cubeBufferCreate() {
+    std::cout << "doing stuff " << std::endl;
     this -> bufferCreate(cubeVertices, 216);
+}
+
+void Cube::cubeBindBuffer() {
+    this -> bindBuffer();
 }

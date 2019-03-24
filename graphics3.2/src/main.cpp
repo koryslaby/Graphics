@@ -22,6 +22,7 @@
 #include "shader.h"
 #include "Shape.h"
 #include "Cube.h"
+#include "Plain.h"
  
 using namespace std;
 
@@ -59,11 +60,12 @@ int main(int argc, char const *argv[])
 #endif
 
     Cube cube("cube");
+    Plain ground("plain");
 
 
     glm::vec3 cubPositions[] = {
-            glm::vec3(0.0f, 0.0f, -20.0f),
-            glm::vec3(2.0f, 5.0f, -15.0f),
+            glm::vec3(0.0f, -30.0f, -20.0f),
+            glm::vec3(2.0f, -2.0f, -15.0f),
             glm::vec3(-1.5f, -2.2f, -2.5f),
             glm::vec3(-1.8f, -2.0f, -12.3f),
             glm::vec3(2.4f, -0.4f, -3.5f),
@@ -104,7 +106,9 @@ int main(int argc, char const *argv[])
 
     Shader myShader("shader.vs", "shader.fs");
 
+
     cube.cubeBufferCreate();
+    ground.plainBufferCreate();
 
 
 
@@ -123,39 +127,42 @@ int main(int argc, char const *argv[])
         processInput(window);
         myShader.use();
 
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-
+        glm::mat4 model = glm::mat4 (1.0f);
+        float angle = 20.0f;
 
         myShader.setMat4("projection", projection);
 
         glEnable(GL_DEPTH_TEST);
 
-        cube.bindBuffer();
+        ground.plainBindBuffer();
+
+
+        model = glm::translate(model, cubPositions[0]);
+
+        angle = 0.0f;
+        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+        model = glm::scale(model, glm::vec3(40.0, 40.0, 40.0));
+        myShader.setMat4("model", model);
+
+        model = glm::mat4 (1.0f);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+
+        cube.cubeBindBuffer();
+        angle = 20.0f;
+        model = glm::translate(model, cubPositions[1]);
+        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+        myShader.setMat4("model", model);
+
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+
 
         glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
         myShader.setMat4("view", view);
-       
-        for (unsigned int i = 0; i < 10; ++i)
-        {
-            
-           
-            
-
-            glm::mat4 model = glm::mat4 (1.0f);
-            model = glm::translate(model, cubPositions[i]);
-            float angle = 20.0f * i;
-            model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-            myShader.setMat4("model", model);
-
-            glDrawArrays(GL_TRIANGLES, 0, 36);
-        }
-
-
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
-
+    ground.clearBuffer();
 
     glfwTerminate();
     return 0;

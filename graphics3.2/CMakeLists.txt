@@ -46,7 +46,7 @@ endif (WIN32)
 #include_directories(${CMAKE_BINARY_DIR}/configuration)
 
 add_library(GLAD "src/glad.c" src/Cube.cpp src/Cube.h)
-add_library(Shape "src/Shape.cpp")
+add_library(Shape "src/Shape.cpp" src/Plain.cpp src/Plain.h)
 set(LIBS ${LIBS} GLAD Shape)
 
 macro(makeLink src dest target)

@@ -18,8 +18,8 @@ public:
     void setCurrentShape(std::string shape);
     void bufferCreate(float *array, int size);
     void bindBuffer();
-
-
+    void clearBuffer();
+    std::string getCurrentShape();
 };
 
 

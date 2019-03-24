@@ -24,16 +24,8 @@
 #include "shader.h"
 #include "Shape.h"
 
-float planeVertices[36] = {
-        -0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
-        0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
-        0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
-        0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
-        -0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
-        -0.5f,  0.5f, -0.5f, 0.0, 0.5, 0.5f
-};
-
 Shape::Shape() {
+
 }
 
 Shape::Shape(std::string shape) {
@@ -42,27 +34,40 @@ Shape::Shape(std::string shape) {
 
 void Shape::setCurrentShape(std::string shape) {
     this -> currentShape = shape;
+
 }
 
 void Shape::bufferCreate(float currentVertex[], int size){
-    float virtices[size];
+    float shapeInfo[size];
     for(int i = 0; i < size; i++){
-        virtices[i] = currentVertex[i];
+        shapeInfo[i] = currentVertex[i];
     }
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof((virtices)), virtices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof((shapeInfo)), shapeInfo, GL_STATIC_DRAW);
     //teling opengl how to interpret the vertex data.
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*) nullptr);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
 }
 
 void Shape::bindBuffer() {
     glBindVertexArray(VAO);
+
 }
+
+void Shape::clearBuffer() {
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+}
+
+std::string Shape::getCurrentShape() {
+    return currentShape;
+}
+
+
