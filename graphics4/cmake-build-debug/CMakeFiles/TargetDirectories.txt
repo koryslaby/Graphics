@@ -1,0 +1,5 @@
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles/graphics4.dir
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles/Shape.dir
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles/GLAD.dir

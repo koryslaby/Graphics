@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Cube.cpp
+iostream
+-
+Cube.h
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Cube.h
+
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Cube.h
+Shape.h
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h
+
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h
+
