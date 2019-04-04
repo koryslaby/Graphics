@@ -47,10 +47,11 @@ float lastFrame = 0.0f;
 
 glm::vec3 coral(1.0f, 0.5f, 0.31f);
 glm::vec3 lightPos(0.0f, 1.0f, -25.0f);
-glm::vec3 bouncingBlock(0.0f, 1.0f, -20.0f);
+glm::vec3 bouncingBlock(0.0f, 8.0f, -20.0f);
 glm::vec3 cubeScale(10.0, 15.0, 10.0);
 
-float gravity = -.1;
+float gravity = -.15;
+float lightSpeed = .1;
 
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float blowBack = 5;
@@ -175,8 +176,10 @@ int main(int argc, char const *argv[])
 
     //creating a window and giving it a name
 
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH-1, SCR_HEIGHT, "My Screen", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH-1, SCR_HEIGHT, "My Screen", glfwGetPrimaryMonitor(), NULL);
+
     glfwPollEvents();
+
     glfwSetWindowSize(window, SCR_WIDTH, SCR_HEIGHT);
     if ( window == NULL)
     {
@@ -345,7 +348,9 @@ int main(int argc, char const *argv[])
 
         model = glm::mat4 (1.0f);
         if(!objCollisionDetection(bouncingBlock, glm::vec3(2.0, 2.0, 2.0), floorPositions[2], floorScale[2])){
-            bouncingBlock.y += gravity;
+            bouncingBlock.y += gravity * -gravity;
+        } else {
+          //  bouncingBlock.y += gravity + (1 - deltaTime);
         }
 
         model = glm::translate(model, bouncingBlock );
@@ -361,6 +366,14 @@ int main(int argc, char const *argv[])
         lightShader.setMat4("projection", projection);
         lightShader.setMat4("view", view);
 
+        lightPos.z += lightSpeed;
+        if(lightPos.z > 20){
+            lightSpeed = -.1;
+        }
+        if(lightPos.z < -35.1){
+            lightSpeed = .1;
+        }
+
         model = glm::mat4 (1.0f);
         model = glm::translate(model, lightPos );
         model = glm::scale(model, glm::vec3(1.0, 1.0, 1.0));
@@ -373,10 +386,6 @@ int main(int argc, char const *argv[])
           //  cout << camera.Position[i] << " ";
        // }
        // cout << endl;
-
-
-
-
 
 
         glfwSwapBuffers(window);
