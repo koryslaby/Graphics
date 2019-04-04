@@ -48,6 +48,9 @@ float lastX = 800.0f / 2.0;
 float lastY = 600.0 / 2.0;
 float fov = 45.0f;
 
+glm::vec3 coral(1.0f, 0.5f, 0.31f);
+glm::vec3 lightPos(0.0f, 1.0f, -25.0f);
+
 int main(int argc, char const *argv[])
 {
     //initualizing glfw and telling it what version we are using.
@@ -107,6 +110,59 @@ int main(int argc, char const *argv[])
             glm::vec3(0.01, 40.0, 60.0)
     };
 
+    float cubeVertices[216] = {
+            -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+            0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+            0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+            -0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+            -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+
+            -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+            0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+            0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+
+            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+
+            0.5f,  0.5f,  0.5f,  0.5, 0.0, 0.5f,
+            0.5f,  0.5f, -0.5f,  0.5, 0.0, 0.5f,
+            0.5f, -0.5f, -0.5f,  0.5, 0.0, 0.5f,
+            0.5f, -0.5f, -0.5f,  0.5, 0.0, 0.5f,
+            0.5f, -0.5f,  0.5f,  0.5, 0.0, 0.5f,
+            0.5f,  0.5f,  0.5f,  0.5, 0.0, 0.5f,
+
+            -0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
+            0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
+            0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
+            0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
+            -0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
+            -0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
+
+            -0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
+            0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
+            0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
+            0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
+            -0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
+            -0.5f,  0.5f, -0.5f, 0.0, 0.5, 0.5f
+    };
+
+    float planeVertices[36] = {
+            -0.5f,  0.5f, -0.5f,  1.0, 1.0, 0.0f,
+            0.5f,  0.5f, -0.5f,  1.0, 0.0, 0.0f,
+            0.5f,  0.5f,  0.5f,  0.0, 1.0, 0.0f,
+            0.5f,  0.5f,  0.5f,  0.0, 1.0, 0.0f,
+            -0.5f,  0.5f,  0.5f,  0.0, 0.0, 1.0f,
+            -0.5f,  0.5f, -0.5f, 1.0, 1.0, 0.0f
+    };
+
 
     //creating a window and giving it a name
 
@@ -137,10 +193,48 @@ int main(int argc, char const *argv[])
     Shader myShader("shader.vs", "shader.fs");
     Shader lightShader("shader.vs", "lightshader.fs");
 
+    Shader objectShader("Object.vs", "Object.fs");
 
-    cube.cubeBufferCreate();
-    light.cubeBufferCreate();
-    ground.plainBufferCreate();
+
+    //cube.cubeBufferCreate();
+    //light.cubeBufferCreate();
+    //ground.plainBufferCreate();
+
+
+
+    unsigned int pVBO, PlainVAO;
+    glGenVertexArrays(1, &PlainVAO);
+    glGenBuffers(1, &pVBO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, pVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(planeVertices), planeVertices, GL_STATIC_DRAW);
+
+    glBindVertexArray(PlainVAO);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+
+    unsigned int cVBO, CubeVAO;
+    glGenVertexArrays(1, &CubeVAO);
+    glGenBuffers(1, &cVBO);
+
+    glBindVertexArray(CubeVAO);
+
+    glBindBuffer(GL_ARRAY_BUFFER, cVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+
+    unsigned int LightVAO;
+    glGenVertexArrays(1, &LightVAO);
+    glBindVertexArray(LightVAO);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
 
 
 
@@ -156,22 +250,30 @@ int main(int argc, char const *argv[])
     	deltaTime = currentFrame - lastFrame;
     	lastFrame = currentFrame;
 
+        glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         processInput(window);
-        myShader.use();
+        objectShader.use();
 
 
         glm::mat4 model = glm::mat4 (1.0f);
         float angle = 20.0f;
 
-        myShader.setMat4("projection", projection);
+        objectShader.setMat4("projection", projection);
+        objectShader.setMat4("view", view);
 
         glEnable(GL_DEPTH_TEST);
 
+
+        objectShader.setVec3("objectColor", coral);
         //generating the ground
-        ground.plainBindBuffer();
+        //ground.plainBindBuffer();
+
+
+        glBindVertexArray(PlainVAO);
 
         int flip = -1;
         float savNum = 1.0f;
@@ -185,31 +287,44 @@ int main(int argc, char const *argv[])
                 angle = 1.57;
                 model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0f, 0.0f, savNum));
             }
-            myShader.setMat4("model", model);
+            objectShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 6);
             model = glm::mat4 (1.0f);
         }
 
+
         //generating the buildings
-        cube.cubeBindBuffer();
+        //cube.cubeBindBuffer();
+
+        glBindVertexArray(CubeVAO);
 
         for (int i = 0; i < buildings; ++i) {
             model = glm::mat4 (1.0f);
             model = glm::translate(model, buildingPositions[i] );
             model = glm::scale(model, glm::vec3(10.0, 15.0, 10.0));
-            myShader.setMat4("model", model);
+            objectShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 36);
 
         }
 
+        lightShader.use();
+
+        lightShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+        lightShader.setMat4("projection", projection);
+        lightShader.setMat4("view", view);
+
+        model = glm::mat4 (1.0f);
+        model = glm::translate(model, lightPos );
+        model = glm::scale(model, glm::vec3(1.0, 1.0, 1.0));
+        lightShader.setMat4("model", model);
+        glBindVertexArray(LightVAO);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
 
 
 
 
-        glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-        myShader.setMat4("view", view);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

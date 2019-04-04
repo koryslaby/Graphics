@@ -1,2 +1,2 @@
-# Empty dependencies file for glad.
+# Empty dependencies file for GLad.
 # This may be replaced when dependencies are built.
