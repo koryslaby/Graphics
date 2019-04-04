@@ -1464,6 +1464,16 @@ Shape.h
 
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h
 
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/camera.h
+glad/glad.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+vector
+-
+
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/main.cpp
 iostream
 -
@@ -1503,6 +1513,8 @@ Cube.h
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Cube.h
 Plain.h
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Plain.h
+camera.h
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/camera.h
 
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/shader.h
 glad/glad.h

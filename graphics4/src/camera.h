@@ -32,6 +32,7 @@ class Camera
 {
 public:
     // Camera Attributes
+    glm::vec3 oldPosition;
     glm::vec3 Position;
     glm::vec3 Front;
     glm::vec3 Up;
@@ -74,6 +75,7 @@ public:
     void ProcessKeyboard(Camera_Movement direction, float deltaTime)
     {
         float velocity = MovementSpeed * deltaTime;
+        oldPosition = Position;
         if (direction == FORWARD)
             Position += Front * velocity;
         if (direction == BACKWARD)
@@ -115,6 +117,12 @@ public:
             Zoom = 1.0f;
         if (Zoom >= 45.0f)
             Zoom = 45.0f;
+    }
+
+    void colliding(bool collision, float blowBack){
+        if(collision){
+            Position = oldPosition + (blowBack * (oldPosition-Position));
+        }
     }
 
 private:

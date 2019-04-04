@@ -208,6 +208,7 @@ CMakeFiles/graphics4.dir/src/main.cpp.o: ../includes/glm/vector_relational.hpp
 CMakeFiles/graphics4.dir/src/main.cpp.o: ../src/Cube.h
 CMakeFiles/graphics4.dir/src/main.cpp.o: ../src/Plain.h
 CMakeFiles/graphics4.dir/src/main.cpp.o: ../src/Shape.h
+CMakeFiles/graphics4.dir/src/main.cpp.o: ../src/camera.h
 CMakeFiles/graphics4.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics4.dir/src/main.cpp.o: ../src/shader.h
 

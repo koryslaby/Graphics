@@ -24,12 +24,16 @@
 #include "Shape.h"
 #include "Cube.h"
 #include "Plain.h"
+#include "camera.h"
  
 using namespace std;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void collisionDetection(glm::vec3 *array, int size, glm::vec3 scale);
+void collisionDetection(glm::vec3 *array, int size, glm::vec3 *scale);
+bool objCollisionDetection(glm::vec3 pos, glm::vec3 scale, glm::vec3 groundPos, glm::vec3 groundScale );
 
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -41,15 +45,18 @@ const unsigned int SCR_HEIGHT = 600;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-bool firstMouse = true;
-float yaw = -90.0f;
-float pitch = 0.0f;
-float lastX = 800.0f / 2.0;
-float lastY = 600.0 / 2.0;
-float fov = 45.0f;
-
 glm::vec3 coral(1.0f, 0.5f, 0.31f);
 glm::vec3 lightPos(0.0f, 1.0f, -25.0f);
+glm::vec3 bouncingBlock(0.0f, 1.0f, -20.0f);
+glm::vec3 cubeScale(10.0, 15.0, 10.0);
+
+float gravity = -.1;
+
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+float blowBack = 5;
+float lastX = SCR_WIDTH / 2.0f;
+float lastY = SCR_HEIGHT / 2.0f;
+bool firstMouse = true;
 
 int main(int argc, char const *argv[])
 {
@@ -111,56 +118,58 @@ int main(int argc, char const *argv[])
     };
 
     float cubeVertices[216] = {
-            -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-            0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-            0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-            0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+            0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+            0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+            0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
 
-            -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+            0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+            0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+            0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
 
-            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
 
-            0.5f,  0.5f,  0.5f,  0.5, 0.0, 0.5f,
-            0.5f,  0.5f, -0.5f,  0.5, 0.0, 0.5f,
-            0.5f, -0.5f, -0.5f,  0.5, 0.0, 0.5f,
-            0.5f, -0.5f, -0.5f,  0.5, 0.0, 0.5f,
-            0.5f, -0.5f,  0.5f,  0.5, 0.0, 0.5f,
-            0.5f,  0.5f,  0.5f,  0.5, 0.0, 0.5f,
+            0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+            0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+            0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+            0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+            0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+            0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
 
-            -0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
-            0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
-            0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
-            0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
-            -0.5f, -0.5f,  0.5f,  0.5, 0.5, 0.0f,
-            -0.5f, -0.5f, -0.5f,  0.5, 0.5, 0.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+            0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+            0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+            0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
 
-            -0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
-            0.5f,  0.5f, -0.5f,  0.0, 0.5, 0.5f,
-            0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
-            0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
-            -0.5f,  0.5f,  0.5f,  0.0, 0.5, 0.5f,
-            -0.5f,  0.5f, -0.5f, 0.0, 0.5, 0.5f
+            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+            0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
     };
 
+    glm::vec3 planeNormal(0.0f, 1.0f, 0.0f);
+
     float planeVertices[36] = {
-            -0.5f,  0.5f, -0.5f,  1.0, 1.0, 0.0f,
-            0.5f,  0.5f, -0.5f,  1.0, 0.0, 0.0f,
-            0.5f,  0.5f,  0.5f,  0.0, 1.0, 0.0f,
-            0.5f,  0.5f,  0.5f,  0.0, 1.0, 0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0, 0.0, 1.0f,
-            -0.5f,  0.5f, -0.5f, 1.0, 1.0, 0.0f
+            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+            0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
     };
 
 
@@ -214,6 +223,9 @@ int main(int argc, char const *argv[])
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
 
     unsigned int cVBO, CubeVAO;
     glGenVertexArrays(1, &CubeVAO);
@@ -226,6 +238,9 @@ int main(int argc, char const *argv[])
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
 
     unsigned int LightVAO;
@@ -243,6 +258,7 @@ int main(int argc, char const *argv[])
 
     int buildings = 8;
     int plains = 5;
+    bool firstPrint = true;
 
     while(!glfwWindowShouldClose(window))
     {
@@ -250,7 +266,7 @@ int main(int argc, char const *argv[])
     	deltaTime = currentFrame - lastFrame;
     	lastFrame = currentFrame;
 
-        glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+        glm::mat4 view = camera.GetViewMatrix();
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -264,9 +280,19 @@ int main(int argc, char const *argv[])
 
         objectShader.setMat4("projection", projection);
         objectShader.setMat4("view", view);
+        objectShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+        objectShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+        objectShader.setVec3("lightPos", lightPos);
 
         glEnable(GL_DEPTH_TEST);
 
+
+        /*
+        for(int i = 0; i < 3; i++){
+            cout << camera.Position[i] << " ";
+        }
+        cout << endl;
+        */
 
         objectShader.setVec3("objectColor", coral);
         //generating the ground
@@ -278,6 +304,8 @@ int main(int argc, char const *argv[])
         int flip = -1;
         float savNum = 1.0f;
         for (int j = 0; j < plains; ++j) {
+
+            collisionDetection(floorPositions, plains, floorScale);
             model = glm::mat4 (1.0f);
             model = glm::translate(model, floorPositions[j]);
             angle = 0.0f;
@@ -290,6 +318,8 @@ int main(int argc, char const *argv[])
             objectShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 6);
             model = glm::mat4 (1.0f);
+
+
         }
 
 
@@ -299,13 +329,31 @@ int main(int argc, char const *argv[])
         glBindVertexArray(CubeVAO);
 
         for (int i = 0; i < buildings; ++i) {
+
+            collisionDetection(buildingPositions, buildings, cubeScale);
+
             model = glm::mat4 (1.0f);
             model = glm::translate(model, buildingPositions[i] );
-            model = glm::scale(model, glm::vec3(10.0, 15.0, 10.0));
+            model = glm::scale(model, cubeScale);
+
             objectShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 36);
 
         }
+
+
+
+        model = glm::mat4 (1.0f);
+        if(!objCollisionDetection(bouncingBlock, glm::vec3(2.0, 2.0, 2.0), floorPositions[2], floorScale[2])){
+            bouncingBlock.y += gravity;
+        }
+
+        model = glm::translate(model, bouncingBlock );
+        model = glm::scale(model, glm::vec3(2.0, 2.0, 2.0));
+
+
+        objectShader.setMat4("model", model);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
 
         lightShader.use();
 
@@ -319,6 +367,12 @@ int main(int argc, char const *argv[])
         lightShader.setMat4("model", model);
         glBindVertexArray(LightVAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
+        //for(int i = 0; i < 3; i++){
+          //  cout << camera.Position[i] << " ";
+       // }
+       // cout << endl;
 
 
 
@@ -335,31 +389,81 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+bool objCollisionDetection(glm::vec3 pos, glm::vec3 scale, glm::vec3 groundPos, glm::vec3 groundScale ){
+    glm::vec3 buildPos = pos;
+    int MaxX = buildPos[0] + (scale[0]/2);
+    int MinX = buildPos[0] - (scale[0]/2);
+    int MaxY = buildPos[1] + (scale[1]/2);
+    int MinY = buildPos[1] - (scale[1]/2);
+    int MaxZ = buildPos[2] + (scale[2]/2);
+    int MinZ = buildPos[2] - (scale[2]/2);
+
+    int gMaxX = groundPos[0] + (groundScale[0]/2);
+    int gMinX = groundPos[0] - (groundScale[0]/2);
+    int gMaxY = groundPos[1] + (groundScale[1]/2);
+    int gMinY = groundPos[1] - (groundScale[1]/2);
+    int gMaxZ = groundPos[2] + (groundScale[2]/2);
+    int gMinZ = groundPos[2] - (groundScale[2]/2);
+
+    if((MinX  <= gMaxX && MaxX >= gMinX) && (MinY <= gMaxY
+    && MaxY >= gMinY) && (MinZ <= gMaxZ && MaxZ >= gMinZ)){
+        return true;
+    }
+    return false;
+}
+
+
+void collisionDetection(glm::vec3 *array, int size, glm::vec3 scale){
+    glm::vec3 lastMousePos = camera.Position;
+    for(int i = 0; i < size; i++){
+        glm::vec3 buildPos = array[i];
+        int MaxX = buildPos[0] + (scale[0]/2);
+        int MinX = buildPos[0] - (scale[0]/2);
+        int MaxY = buildPos[1] + (scale[1]/2);
+        int MinY = buildPos[1] - (scale[1]/2);
+        int MaxZ = buildPos[2] + (scale[2]/2);
+        int MinZ = buildPos[2] - (scale[2]/2);
+
+        if((camera.Position.x  >= MinX && camera.Position.x <= MaxX) && (camera.Position.y <= MaxY
+        && camera.Position.y >= MinY) && (camera.Position.z >= MinZ && camera.Position.z <= MaxZ)){
+            cout << "the mouse is colliding" << endl;
+            camera.colliding(true, blowBack);
+        }
+    }
+}
+
+void collisionDetection(glm::vec3 *array, int size, glm::vec3 *scale){
+    for(int i = 0; i < size; i++){
+        glm::vec3 buildPos = array[i];
+        glm::vec3 scaleSize = scale[i];
+        int MaxX = buildPos[0] + (scaleSize[0]/2);
+        int MinX = buildPos[0] - (scaleSize[0]/2);
+        int MaxY = buildPos[1] + (scaleSize[1]/2);
+        int MinY = buildPos[1] - (scaleSize[1]/2);
+        int MaxZ = buildPos[2] + (scaleSize[2]/2);
+        int MinZ = buildPos[2] - (scaleSize[2]/2);
+
+        if((camera.Position.x  >= MinX && camera.Position.x <= MaxX) && (camera.Position.y <= MaxY
+        && camera.Position.y >= MinY) && (camera.Position.z >= MinZ && camera.Position.z <= MaxZ)){
+            cout << "the mouse is colliding" << endl;
+            camera.colliding(true, blowBack);
+        }
+    }
+}
 
 void processInput(GLFWwindow *window)
 {
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
-    float cameraSpeed = 2.5 * deltaTime;
-    if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    {
-    	cameraPos += cameraSpeed * cameraFront;
-    }
-    if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    {
-    	cameraPos -= cameraSpeed * cameraFront;
-    }
-    if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    {
-    	cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    }
-    if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    {
-    	
-    	cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    }
-
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        camera.ProcessKeyboard(FORWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        camera.ProcessKeyboard(BACKWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        camera.ProcessKeyboard(LEFT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        camera.ProcessKeyboard(RIGHT, deltaTime);
 }
 
 //is called when the window is resized.
@@ -370,34 +474,18 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
-	if(firstMouse)
-	{
-		lastX = xpos;
-		lastY = ypos;
-		firstMouse = false;
-	}
+    if (firstMouse)
+    {
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
 
-	float xoffset = xpos - lastX;
-	float yoffset = lastY - ypos;
-	lastX = xpos;
-	lastY = ypos;
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
 
-	float sensitivity = 0.05f;
-	xoffset *= sensitivity;
-	yoffset *= sensitivity;
-	pitch += yoffset;
-	yaw += xoffset;
-	if(pitch > 89.0f)
-	{
-		pitch = 89.0f;
-	}
-	if (pitch < -89.0f)
-	{
-		pitch = -89.0f;
-	}
-	glm::vec3 front;
-	front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-	front.y = sin(glm::radians(pitch));
-	front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-	cameraFront = glm::normalize(front);
+    lastX = xpos;
+    lastY = ypos;
+
+    camera.ProcessMouseMovement(xoffset, yoffset);
 }
