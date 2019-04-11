@@ -188,16 +188,13 @@
 		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Plain.h">
 			<Option target="Shape"/>
 		</Unit>
-		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.cpp">
-			<Option target="Shape"/>
-		</Unit>
-		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h">
-			<Option target="graphics4"/>
-		</Unit>
 		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/glad.c">
 			<Option target="GLAD"/>
 		</Unit>
 		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/main.cpp">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/shader.h">
 			<Option target="graphics4"/>
 		</Unit>
 		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/CMakeLists.txt">

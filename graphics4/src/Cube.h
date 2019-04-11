@@ -6,15 +6,23 @@
 #define GRAPHICS3_2_CUBE_H
 
 
-#include "Shape.h"
+#include "shader.h"
 
-class Cube: public Shape {
+class Cube {
 public:
-    Cube(): Shape(){};
-    Cube(std::string shape): Shape(shape){};
-    void cubeBufferCreate();
-    void cubeBindBuffer();
+    static int numCubes;
+    unsigned int CVBO, CVAO;
+    glm::vec3 position;
+    glm::vec3 objectColor;
+    glm::vec3 lightColor;
+    glm::vec3 lightPos;
+    glm::mat4 objectModel;
+    Cube();
+    Cube(glm::mat4 model);
+    void bindVertices();
 
+private:
+    void loadVertices();
 };
 
 

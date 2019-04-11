@@ -1453,16 +1453,12 @@ detail/func_vector_relational.inl
 ../includes/glm/detail/func_vector_relational.inl
 
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Cube.h
-Shape.h
-/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h
+shader.h
+/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/shader.h
 
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Plain.h
 iostream
 -
-Shape.h
-/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h
-
-/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h
 
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/camera.h
 glad/glad.h
@@ -1507,8 +1503,6 @@ cmath
 -
 shader.h
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/shader.h
-Shape.h
-/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.h
 Cube.h
 /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Cube.h
 Plain.h

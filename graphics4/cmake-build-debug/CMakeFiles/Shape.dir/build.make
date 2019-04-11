@@ -57,22 +57,9 @@ include CMakeFiles/Shape.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Shape.dir/flags.make
 
-CMakeFiles/Shape.dir/src/Shape.cpp.o: CMakeFiles/Shape.dir/flags.make
-CMakeFiles/Shape.dir/src/Shape.cpp.o: ../src/Shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Shape.dir/src/Shape.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Shape.dir/src/Shape.cpp.o -c /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.cpp
-
-CMakeFiles/Shape.dir/src/Shape.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Shape.dir/src/Shape.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.cpp > CMakeFiles/Shape.dir/src/Shape.cpp.i
-
-CMakeFiles/Shape.dir/src/Shape.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Shape.dir/src/Shape.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Shape.cpp -o CMakeFiles/Shape.dir/src/Shape.cpp.s
-
 CMakeFiles/Shape.dir/src/Plain.cpp.o: CMakeFiles/Shape.dir/flags.make
 CMakeFiles/Shape.dir/src/Plain.cpp.o: ../src/Plain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Shape.dir/src/Plain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Shape.dir/src/Plain.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Shape.dir/src/Plain.cpp.o -c /Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Plain.cpp
 
 CMakeFiles/Shape.dir/src/Plain.cpp.i: cmake_force
@@ -85,17 +72,15 @@ CMakeFiles/Shape.dir/src/Plain.cpp.s: cmake_force
 
 # Object files for target Shape
 Shape_OBJECTS = \
-"CMakeFiles/Shape.dir/src/Shape.cpp.o" \
 "CMakeFiles/Shape.dir/src/Plain.cpp.o"
 
 # External object files for target Shape
 Shape_EXTERNAL_OBJECTS =
 
-libShape.a: CMakeFiles/Shape.dir/src/Shape.cpp.o
 libShape.a: CMakeFiles/Shape.dir/src/Plain.cpp.o
 libShape.a: CMakeFiles/Shape.dir/build.make
 libShape.a: CMakeFiles/Shape.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libShape.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libShape.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/Shape.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Shape.dir/link.txt --verbose=$(VERBOSE)
 

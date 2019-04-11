@@ -21,7 +21,6 @@
 #include <cmath>
 
 #include "shader.h"
-#include "Shape.h"
 #include "Cube.h"
 #include "Plain.h"
 #include "camera.h"
@@ -36,8 +35,6 @@ void collisionDetection(glm::vec3 *array, int size, glm::vec3 *scale);
 bool objCollisionDetection(glm::vec3 pos, glm::vec3 scale, glm::vec3 groundPos, glm::vec3 groundScale );
 
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -53,7 +50,7 @@ glm::vec3 cubeScale(10.0, 15.0, 10.0);
 float gravity = -.15;
 float lightSpeed = .1;
 
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(cameraPos);
 float blowBack = 5;
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
@@ -70,24 +67,6 @@ int main(int argc, char const *argv[])
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // uncomment this statement to fix compilation on OS X
 #endif
-
-    Cube cube("cube");
-    Cube light("cube");
-    Plain ground("plain");
-
-
-    glm::vec3 cubPositions[] = {
-            glm::vec3(0.0f, -30.0f, -20.0f),
-            glm::vec3(2.0f, -2.0f, -15.0f),
-            glm::vec3(-1.5f, -2.2f, -2.5f),
-            glm::vec3(-1.8f, -2.0f, -12.3f),
-            glm::vec3(2.4f, -0.4f, -3.5f),
-            glm::vec3(-1.7f, 3.0f, -7.5f),
-            glm::vec3(1.3f, -2.0f, -2.5f),
-            glm::vec3(1.5f, 2.0f, -2.5f),
-            glm::vec3(1.5f, 0.2f, -1.5f),
-            glm::vec3(-2.3f, 1.0f, -1.5f),
-    };
 
     glm::vec3 buildingPositions[] = {
             glm::vec3(15.0f, -2.5f, -35.0f),
@@ -118,61 +97,7 @@ int main(int argc, char const *argv[])
             glm::vec3(0.01, 40.0, 60.0)
     };
 
-    float cubeVertices[216] = {
-            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-            0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-            0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-            0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-
-            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-            0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-            0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-            0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
-
-            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-            -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-            -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-
-            0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-            0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-            0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-            0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-            0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-            0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-
-            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-            0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-            0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-            0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-
-            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-            0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
-    };
-
     glm::vec3 planeNormal(0.0f, 1.0f, 0.0f);
-
-    float planeVertices[36] = {
-            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-            0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-            0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
-    };
-
 
     //creating a window and giving it a name
 
@@ -202,66 +127,20 @@ int main(int argc, char const *argv[])
         return -1;
     }
 
-    Shader myShader("shader.vs", "shader.fs");
     Shader lightShader("shader.vs", "lightshader.fs");
 
     Shader objectShader("Object.vs", "Object.fs");
 
 
-    //cube.cubeBufferCreate();
-    //light.cubeBufferCreate();
-    //ground.plainBufferCreate();
-
-
-
-    unsigned int pVBO, PlainVAO;
-    glGenVertexArrays(1, &PlainVAO);
-    glGenBuffers(1, &pVBO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, pVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(planeVertices), planeVertices, GL_STATIC_DRAW);
-
-    glBindVertexArray(PlainVAO);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-
-    unsigned int cVBO, CubeVAO;
-    glGenVertexArrays(1, &CubeVAO);
-    glGenBuffers(1, &cVBO);
-
-    glBindVertexArray(CubeVAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, cVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-
-    unsigned int LightVAO;
-    glGenVertexArrays(1, &LightVAO);
-    glBindVertexArray(LightVAO);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-
-
-
     glm::mat4 projection = glm::mat4(1.0f);
+    glm::mat4 model = glm::mat4 (1.0f);
     projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+
+    Cube cubes;
+    Plain plain;
 
     int buildings = 8;
     int plains = 5;
-    bool firstPrint = true;
 
     while(!glfwWindowShouldClose(window))
     {
@@ -272,13 +151,11 @@ int main(int argc, char const *argv[])
         glm::mat4 view = camera.GetViewMatrix();
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         processInput(window);
         objectShader.use();
 
-
-        glm::mat4 model = glm::mat4 (1.0f);
+        //glm::mat4 model = glm::mat4 (1.0f);
         float angle = 20.0f;
 
         objectShader.setMat4("projection", projection);
@@ -290,50 +167,31 @@ int main(int argc, char const *argv[])
         glEnable(GL_DEPTH_TEST);
 
 
-        /*
-        for(int i = 0; i < 3; i++){
-            cout << camera.Position[i] << " ";
-        }
-        cout << endl;
-        */
-
         objectShader.setVec3("objectColor", coral);
-        //generating the ground
-        //ground.plainBindBuffer();
 
+        plain.bindVertices();
 
-        glBindVertexArray(PlainVAO);
-
-        int flip = -1;
         float savNum = 1.0f;
         for (int j = 0; j < plains; ++j) {
-
             collisionDetection(floorPositions, plains, floorScale);
             model = glm::mat4 (1.0f);
             model = glm::translate(model, floorPositions[j]);
-            angle = 0.0f;
             model = glm::scale(model, floorScale[j]);
             if(j > 2){
-                savNum = savNum * flip;
+                savNum = savNum;
                 angle = 1.57;
                 model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0f, 0.0f, savNum));
             }
             objectShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 6);
-            model = glm::mat4 (1.0f);
-
-
         }
 
-
-        //generating the buildings
-        //cube.cubeBindBuffer();
-
-        glBindVertexArray(CubeVAO);
+        cubes.bindVertices();
 
         for (int i = 0; i < buildings; ++i) {
 
             collisionDetection(buildingPositions, buildings, cubeScale);
+
 
             model = glm::mat4 (1.0f);
             model = glm::translate(model, buildingPositions[i] );
@@ -343,7 +201,6 @@ int main(int argc, char const *argv[])
             glDrawArrays(GL_TRIANGLES, 0, 36);
 
         }
-
 
 
         model = glm::mat4 (1.0f);
@@ -378,21 +235,13 @@ int main(int argc, char const *argv[])
         model = glm::translate(model, lightPos );
         model = glm::scale(model, glm::vec3(1.0, 1.0, 1.0));
         lightShader.setMat4("model", model);
-        glBindVertexArray(LightVAO);
+        cubes.bindVertices();
         glDrawArrays(GL_TRIANGLES, 0, 36);
-
-
-        //for(int i = 0; i < 3; i++){
-          //  cout << camera.Position[i] << " ";
-       // }
-       // cout << endl;
 
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
-    ground.clearBuffer();
 
     glfwTerminate();
     return 0;

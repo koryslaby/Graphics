@@ -203,33 +203,6 @@ src/Plain.cpp.s:
 	$(MAKE) -f CMakeFiles/Shape.dir/build.make CMakeFiles/Shape.dir/src/Plain.cpp.s
 .PHONY : src/Plain.cpp.s
 
-src/Shape.o: src/Shape.cpp.o
-
-.PHONY : src/Shape.o
-
-# target to build an object file
-src/Shape.cpp.o:
-	$(MAKE) -f CMakeFiles/Shape.dir/build.make CMakeFiles/Shape.dir/src/Shape.cpp.o
-.PHONY : src/Shape.cpp.o
-
-src/Shape.i: src/Shape.cpp.i
-
-.PHONY : src/Shape.i
-
-# target to preprocess a source file
-src/Shape.cpp.i:
-	$(MAKE) -f CMakeFiles/Shape.dir/build.make CMakeFiles/Shape.dir/src/Shape.cpp.i
-.PHONY : src/Shape.cpp.i
-
-src/Shape.s: src/Shape.cpp.s
-
-.PHONY : src/Shape.s
-
-# target to generate assembly for a file
-src/Shape.cpp.s:
-	$(MAKE) -f CMakeFiles/Shape.dir/build.make CMakeFiles/Shape.dir/src/Shape.cpp.s
-.PHONY : src/Shape.cpp.s
-
 src/glad.o: src/glad.c.o
 
 .PHONY : src/glad.o
@@ -301,9 +274,6 @@ help:
 	@echo "... src/Plain.o"
 	@echo "... src/Plain.i"
 	@echo "... src/Plain.s"
-	@echo "... src/Shape.o"
-	@echo "... src/Shape.i"
-	@echo "... src/Shape.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"

@@ -7,14 +7,20 @@
 
 #include <iostream>
 
-#include "Shape.h"
-
-class Plain: public Shape {
+class Plain {
 public:
-    Plain(): Shape(){};
-    Plain(std::string shape): Shape(shape){};
-    void plainBufferCreate();
-    void plainBindBuffer();
+    static int numCubes;
+    unsigned int CVBO, CVAO;
+    glm::vec3 position;
+    glm::vec3 objectColor;
+    glm::vec3 lightColor;
+    glm::vec3 lightPos;
+    glm::mat4 objectModel;
+    Plain();
+    void bindVertices();
+
+private:
+    void loadVertices();
 
 };
 

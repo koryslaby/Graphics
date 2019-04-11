@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Shape.dir/src/Shape.cpp.o"
   "CMakeFiles/Shape.dir/src/Plain.cpp.o"
   "libShape.pdb"
   "libShape.a"
