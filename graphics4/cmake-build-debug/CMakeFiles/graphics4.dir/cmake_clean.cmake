@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/graphics4.dir/src/main.cpp.o"
+  "CMakeFiles/graphics4.dir/src/Car.cpp.o"
+  "CMakeFiles/graphics4.dir/src/Circle.cpp.o"
   "graphics4.pdb"
   "graphics4"
 )

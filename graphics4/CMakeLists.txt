@@ -68,7 +68,7 @@ foreach(SRCFILES ${SRCFILES})
 endforeach(SRCFILES)
 
 enable_language(CXX)
-add_executable(graphics4 src/main.cpp ${SOURCE})
+add_executable(graphics4 src/main.cpp ${SOURCE} src/Car.cpp src/Car.h src/Circle.cpp src/Circle.h)
 target_link_libraries(graphics4 ${LIBS})
 
 include_directories(${CMAKE_SOURCE_DIR}/includes)

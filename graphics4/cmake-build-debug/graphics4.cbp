@@ -176,6 +176,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Car.cpp">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Car.h">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Circle.cpp">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Circle.h">
+			<Option target="graphics4"/>
+		</Unit>
 		<Unit filename="/Users/koryslaby/Desktop/Graphics/github/Graphics/graphics4/src/Cube.cpp">
 			<Option target="GLAD"/>
 		</Unit>

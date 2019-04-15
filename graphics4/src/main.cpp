@@ -23,6 +23,8 @@
 #include "shader.h"
 #include "Cube.h"
 #include "Plain.h"
+#include "Car.h"
+#include "Circle.h"
 #include "camera.h"
  
 using namespace std;
@@ -33,6 +35,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void collisionDetection(glm::vec3 *array, int size, glm::vec3 scale);
 void collisionDetection(glm::vec3 *array, int size, glm::vec3 *scale);
 bool objCollisionDetection(glm::vec3 pos, glm::vec3 scale, glm::vec3 groundPos, glm::vec3 groundScale );
+void renderCar(Circle shape, glm::mat4 model, Shader objectShader );
 
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 
@@ -42,10 +45,15 @@ const unsigned int SCR_HEIGHT = 600;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+
 glm::vec3 coral(1.0f, 0.5f, 0.31f);
+glm::vec3 blue(0.0f, 0.0f, 1.0f);
 glm::vec3 lightPos(0.0f, 1.0f, -25.0f);
 glm::vec3 bouncingBlock(0.0f, 8.0f, -20.0f);
 glm::vec3 cubeScale(10.0, 15.0, 10.0);
+
+bool steerRight = false;
+bool steerLeft = false;
 
 float gravity = -.15;
 float lightSpeed = .1;
@@ -97,6 +105,20 @@ int main(int argc, char const *argv[])
             glm::vec3(0.01, 40.0, 60.0)
     };
 
+    glm::vec3 streetPositions[] = {
+            glm::vec3(0,0,0),
+            glm::vec3(-70, 0, 0),
+            glm::vec3(25, 0, 45)
+    };
+
+    glm::vec3 streetRotAxis[] = {
+            glm::vec3(0.0f,0.0f,1.0f),
+            glm::vec3(0.0f,0.0f,1.0f),
+            glm::vec3(0.0f,1.0f,0.0f)
+    };
+
+    float streetRotAngle[] = {0,0,90};
+
     glm::vec3 planeNormal(0.0f, 1.0f, 0.0f);
 
     //creating a window and giving it a name
@@ -132,15 +154,18 @@ int main(int argc, char const *argv[])
     Shader objectShader("Object.vs", "Object.fs");
 
 
-    glm::mat4 projection = glm::mat4(1.0f);
+    glm::mat4 projection = glm::mat4 (1.0f);
     glm::mat4 model = glm::mat4 (1.0f);
+    glm::mat4 instance = glm::mat4 (1.0f);
     projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
     Cube cubes;
     Plain plain;
+    Car car(glm::vec3(0,-5,0), glm::vec3(0.75, 0.75, 0.75), 90.0f);
 
     int buildings = 8;
     int plains = 5;
+    int numStreets = 3;
 
     while(!glfwWindowShouldClose(window))
     {
@@ -169,53 +194,75 @@ int main(int argc, char const *argv[])
 
         objectShader.setVec3("objectColor", coral);
 
-        plain.bindVertices();
+        instance = glm::mat4(1.0f);
+        objectShader.setMat4("instance", instance);
 
-        float savNum = 1.0f;
-        for (int j = 0; j < plains; ++j) {
-            collisionDetection(floorPositions, plains, floorScale);
-            model = glm::mat4 (1.0f);
-            model = glm::translate(model, floorPositions[j]);
-            model = glm::scale(model, floorScale[j]);
-            if(j > 2){
-                savNum = savNum;
-                angle = 1.57;
-                model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0f, 0.0f, savNum));
+
+        for (int k = 0; k < numStreets; ++k) {
+
+            plain.bindVertices();
+            instance = glm::translate(instance, streetPositions[k]);
+            instance = glm::rotate(instance, glm::radians(streetRotAngle[k]), streetRotAxis[k]);
+            objectShader.setMat4("instance", instance);
+
+            float savNum = 1.0f;
+            for (int j = 0; j < plains; ++j) {
+                collisionDetection(floorPositions, plains, floorScale);
+                model = glm::mat4 (1.0f);
+                model = glm::translate(model, floorPositions[j]);
+                model = glm::scale(model, floorScale[j]);
+                if(j > 2){
+                    savNum = savNum;
+                    angle = 1.57;
+                    model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0f, 0.0f, savNum));
+                }
+                objectShader.setMat4("model", model);
+                glDrawArrays(GL_TRIANGLES, 0, 6);
             }
-            objectShader.setMat4("model", model);
-            glDrawArrays(GL_TRIANGLES, 0, 6);
-        }
 
-        cubes.bindVertices();
+            cubes.bindVertices();
 
-        for (int i = 0; i < buildings; ++i) {
+            for (int i = 0; i < buildings; ++i) {
 
-            collisionDetection(buildingPositions, buildings, cubeScale);
+                collisionDetection(buildingPositions, buildings, cubeScale);
+
+
+                model = glm::mat4 (1.0f);
+                model = glm::translate(model, buildingPositions[i] );
+                model = glm::scale(model, cubeScale);
+
+                objectShader.setMat4("model", model);
+                glDrawArrays(GL_TRIANGLES, 0, 36);
+
+            }
 
 
             model = glm::mat4 (1.0f);
-            model = glm::translate(model, buildingPositions[i] );
-            model = glm::scale(model, cubeScale);
+            if(!objCollisionDetection(bouncingBlock, glm::vec3(2.0, 2.0, 2.0), floorPositions[2], floorScale[2])){
+                bouncingBlock.y += gravity * -gravity;
+            } else {
+                //  bouncingBlock.y += gravity + (1 - deltaTime);
+            }
+
+            model = glm::translate(model, bouncingBlock );
+            model = glm::scale(model, glm::vec3(2.0, 2.0, 2.0));
+
 
             objectShader.setMat4("model", model);
             glDrawArrays(GL_TRIANGLES, 0, 36);
 
+
+
         }
 
-
-        model = glm::mat4 (1.0f);
-        if(!objCollisionDetection(bouncingBlock, glm::vec3(2.0, 2.0, 2.0), floorPositions[2], floorScale[2])){
-            bouncingBlock.y += gravity * -gravity;
-        } else {
-          //  bouncingBlock.y += gravity + (1 - deltaTime);
-        }
-
-        model = glm::translate(model, bouncingBlock );
-        model = glm::scale(model, glm::vec3(2.0, 2.0, 2.0));
+        instance = glm::mat4(1.0f);
+        objectShader.setMat4("instance", instance);
 
 
-        objectShader.setMat4("model", model);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        //renderCar(circle, model, objectShader);
+
+        car.renderTires(objectShader, steerLeft, steerRight);
+
 
         lightShader.use();
 
@@ -322,6 +369,23 @@ void processInput(GLFWwindow *window)
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
+        steerRight = true;
+    } else {
+        steerRight = false;
+    }
+    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
+        steerLeft = true;
+    } else {
+        steerLeft = false;
+    }
+    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS && glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS){
+        steerLeft = false;
+        steerRight = false;
+    }
+
+
+
 }
 
 //is called when the window is resized.

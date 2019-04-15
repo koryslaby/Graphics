@@ -149,6 +149,60 @@ GLAD/fast:
 	$(MAKE) -f CMakeFiles/GLAD.dir/build.make CMakeFiles/GLAD.dir/build
 .PHONY : GLAD/fast
 
+src/Car.o: src/Car.cpp.o
+
+.PHONY : src/Car.o
+
+# target to build an object file
+src/Car.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics4.dir/build.make CMakeFiles/graphics4.dir/src/Car.cpp.o
+.PHONY : src/Car.cpp.o
+
+src/Car.i: src/Car.cpp.i
+
+.PHONY : src/Car.i
+
+# target to preprocess a source file
+src/Car.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics4.dir/build.make CMakeFiles/graphics4.dir/src/Car.cpp.i
+.PHONY : src/Car.cpp.i
+
+src/Car.s: src/Car.cpp.s
+
+.PHONY : src/Car.s
+
+# target to generate assembly for a file
+src/Car.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics4.dir/build.make CMakeFiles/graphics4.dir/src/Car.cpp.s
+.PHONY : src/Car.cpp.s
+
+src/Circle.o: src/Circle.cpp.o
+
+.PHONY : src/Circle.o
+
+# target to build an object file
+src/Circle.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics4.dir/build.make CMakeFiles/graphics4.dir/src/Circle.cpp.o
+.PHONY : src/Circle.cpp.o
+
+src/Circle.i: src/Circle.cpp.i
+
+.PHONY : src/Circle.i
+
+# target to preprocess a source file
+src/Circle.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics4.dir/build.make CMakeFiles/graphics4.dir/src/Circle.cpp.i
+.PHONY : src/Circle.cpp.i
+
+src/Circle.s: src/Circle.cpp.s
+
+.PHONY : src/Circle.s
+
+# target to generate assembly for a file
+src/Circle.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics4.dir/build.make CMakeFiles/graphics4.dir/src/Circle.cpp.s
+.PHONY : src/Circle.cpp.s
+
 src/Cube.o: src/Cube.cpp.o
 
 .PHONY : src/Cube.o
@@ -268,6 +322,12 @@ help:
 	@echo "... graphics4"
 	@echo "... Shape"
 	@echo "... GLAD"
+	@echo "... src/Car.o"
+	@echo "... src/Car.i"
+	@echo "... src/Car.s"
+	@echo "... src/Circle.o"
+	@echo "... src/Circle.i"
+	@echo "... src/Circle.s"
 	@echo "... src/Cube.o"
 	@echo "... src/Cube.i"
 	@echo "... src/Cube.s"
