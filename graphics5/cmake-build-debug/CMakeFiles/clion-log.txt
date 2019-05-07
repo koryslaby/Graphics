@@ -1,0 +1,10 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/koryslaby/Desktop/Graphics/graphics5
+-- GLM_INCLUDE_DIR = /usr/local/include
+-- GLM included at /usr/local/include
+-- GLFW3 included at /usr/local/include
+This is in modules /Users/koryslaby/Desktop/Graphics/graphics5
+-- Found ASSIMP: /usr/local/lib/libassimp.dylib
+-- Found ASSIMP in /usr/local/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug

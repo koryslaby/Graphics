@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="graphics4"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\cmake\modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graphics4">
+				<Option output="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/graphics4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Users/koryslaby/Desktop/Graphics/graphics5/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 graphics4"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graphics4/fast">
+				<Option output="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/graphics4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Users/koryslaby/Desktop/Graphics/graphics5/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 graphics4/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shape">
+				<Option output="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/libShape.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Users/koryslaby/Desktop/Graphics/graphics5/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 Shape"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Shape/fast">
+				<Option output="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/libShape.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Users/koryslaby/Desktop/Graphics/graphics5/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 Shape/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLAD">
+				<Option output="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/libGLAD.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Users/koryslaby/Desktop/Graphics/graphics5/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 GLAD"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GLAD/fast">
+				<Option output="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/libGLAD.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Users/koryslaby/Desktop/Graphics/graphics5/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 GLAD/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/koryslaby/Desktop/Graphics/graphics5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Car.cpp">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Car.h">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/CarCab.cpp">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/CarCab.h">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Circle.cpp">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Circle.h">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Cube.cpp">
+			<Option target="GLAD"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Cube.h">
+			<Option target="GLAD"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Plain.cpp">
+			<Option target="Shape"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/Plain.h">
+			<Option target="Shape"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/glad.c">
+			<Option target="GLAD"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/main.cpp">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/src/shader.h">
+			<Option target="graphics4"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/cmake/modules/FindASSIMP.cmake">
+			<Option virtualFolder="CMake Files\cmake\modules\"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/cmake/modules/FindGLFW3.cmake">
+			<Option virtualFolder="CMake Files\cmake\modules\"/>
+		</Unit>
+		<Unit filename="/Users/koryslaby/Desktop/Graphics/graphics5/cmake/modules/FindGLM.cmake">
+			<Option virtualFolder="CMake Files\cmake\modules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
