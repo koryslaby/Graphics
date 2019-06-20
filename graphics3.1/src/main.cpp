@@ -1,16 +1,6 @@
-/*
+
 #include <iostream>
 #include "../../LearnOpenGL/includes/glad/glad.h"
-#include <GLFW/glfw3.h>
-
-#include "../../LearnOpenGL/includes/glm/glm.hpp"
-#include "../../LearnOpenGL/includes/glm/gtc/matrix_transform.hpp"
-#include "../../LearnOpenGL/includes/glm/gtc/type_ptr.hpp"
-
-#include "../../shader.h"
-#include "Shape.h"
-*/
-
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -28,6 +18,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 
+// Creating variables to be used later by the camera.
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -55,7 +46,8 @@ int main(int argc, char const *argv[])
 
     Shape cube;
     cube.setCurrentShape(0);
-
+	
+	// defining position in the 3d world where the cube will be rendered.
     glm::vec3 cubPositions[] = {
             glm::vec3(0.0f, 0.0f, -20.0f),
             glm::vec3(2.0f, 5.0f, -15.0f),
@@ -104,7 +96,7 @@ int main(int argc, char const *argv[])
     glm::mat4 projection = glm::mat4(1.0f);
     projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
-    while(!glfwWindowShouldClose(window))
+    while(!glfwWindowShouldClose(window))//code that gets rain each frame the windo is open.
     {
     	float currentFrame = glfwGetTime();
     	deltaTime = currentFrame - lastFrame;
@@ -116,7 +108,7 @@ int main(int argc, char const *argv[])
         processInput(window);
         myShader.use();
 
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glDrawArrays(GL_TRIANGLES, 0, 36);//usd to render points loaded into the buffer.
 
 
         myShader.setMat4("projection", projection);
@@ -130,10 +122,6 @@ int main(int argc, char const *argv[])
        
         for (unsigned int i = 0; i < 10; ++i)
         {
-            
-           
-            
-
             glm::mat4 model = glm::mat4 (1.0f);
             model = glm::translate(model, cubPositions[i]);
             float angle = 20.0f * i;
@@ -160,6 +148,7 @@ void processInput(GLFWwindow *window)
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
+	// handling camera movement with player input.
     float cameraSpeed = 2.5 * deltaTime;
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
     {
